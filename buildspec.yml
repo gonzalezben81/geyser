@@ -10,12 +10,12 @@ phases:
       - "echo Build started on `date`"
       - "echo Building the Docker image..."
       - "docker build -t geyser ."
-      - "docker tag geyser:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/geyser:latest"
+      - "docker tag geyser:latest 098789448788.dkr.ecr.us-east-1.amazonaws.com/geyser:latest"
   post_build:
     commands:
       - "echo Build completed on `date`"
       - "echo Pushing the Docker image..."
-      - "docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/geyser:latest"
+      - "docker push 098789448788.dkr.ecr.us-east-1.amazonaws.com/geyser:latest"
   pre_build:
     commands:
       - "echo Logging in to Amazon ECR..."
